@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items>
+    <item id="1">
+        <name>Młotek</name>
+        <description>Młotek z długą rączką</description>
+        <dop>23.05.2020</dop>
+        <state>Dobry</state>
+        <price>15 zł</price>
+    </item>
+
+</items>
