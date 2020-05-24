@@ -19,10 +19,10 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="items.xml">Przedmioty</a>
+            <a class="nav-link" href="/xml/items.xml">Przedmioty</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="stock.xml">Stan magazynu</a>
+            <a class="nav-link" href="/xml/stock.xml">Stan magazynu</a>
           </li>
         </ul>
       </div>
@@ -30,8 +30,8 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
     <div class="container">
       <div style="margin-top: 10px; margin-bottom: 10px; float: left;">
-        <a href="xsl/ascending/items.xml" class="btn btn-dark" >Nazwy A-Z</a>
-        <a href="xsl/descending/items.xml" class="btn btn-dark" style="margin-left: 10px;">Nazwy Z-A</a>
+        <a href="/xml/items.xml" class="btn btn-dark" >X Nazwy A-Z</a>
+        <a href="/xml/xsl/descending/items.xml" class="btn btn-dark" style="margin-left: 10px;">Nazwy Z-A</a>
       </div>
       <table class="table table table-hover" style="margin-top: 50px;" border="1">
         <thead align="center" class="thead-dark">
@@ -43,6 +43,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
         </thead>
         <tbody>
           <xsl:for-each select="items/item">
+          <xsl:sort select="name"/>
             <tr>
               <td><xsl:value-of select="name"/></td>
               <td><xsl:value-of select="description"/></td>
