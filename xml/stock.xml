@@ -2,13 +2,12 @@
 
 <?xml-stylesheet type="text/xsl" href="xsl/stock.xsl"?>
 
-<items>
+<inventory>
     <item>
         <name>Młotek</name>
-        <description>Młotek z długą rączką</description>
-        <dop>23.05.2020</dop>
-        <state>Dobry</state>
-        <price>15 zł</price>
+        <stock>10</stock>
+        <weight>2</weight>
+        <color color="green">Zielony</color>
     </item>
 
-</items>
+</inventory>
