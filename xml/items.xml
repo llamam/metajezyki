@@ -2,14 +2,14 @@
 <?xml-stylesheet type="text/xsl" href="xsl/items.xsl"?>
 
 <items>
-    <item id="1">
+    <item>
         <name>Młotek</name>
         <description>Młotek z długą rączką</description>
         <dop>23.05.2020</dop>
         <state>Dobry</state>
         <price>15</price>
     </item>
-    <item id="2">
+    <item>
         <name>Apaszka</name>
         <description>Młotek z długą rączką</description>
         <dop>23.05.2020</dop>

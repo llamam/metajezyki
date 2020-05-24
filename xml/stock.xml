@@ -2,9 +2,8 @@
 
 <?xml-stylesheet type="text/xsl" href="xsl/stock.xsl"?>
 
-
 <items>
-    <item id="1">
+    <item>
         <name>Młotek</name>
         <description>Młotek z długą rączką</description>
         <dop>23.05.2020</dop>
