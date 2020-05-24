@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Aplikacja internetowa XML</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/searchTable.js"></script>
+</head>
+
+<body>
+    <div class="container">
+
+        <div id="main">
+            <br>
+            <input id="searchfunction" class="inputStyle" type="text" placeholder="Wyszukaj..." onkeyup="searchTable()">
+            <br><br>
+            <div class="tabcontainer">
+                <table id="items" cellspacing="10" >
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nazwa</th>
+                            <th>Opis</th>
+                            <th>Data zakupu</th>
+                            <th>Stan techniczny</th>
+                            <th>Wartość</th>
+                        </tr>
+                    </thead>
+                    <tbody style="overflow-y:scroll;height: 200px;">
+                        <tr>
+                            <td>123</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
