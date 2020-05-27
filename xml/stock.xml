@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<?xml-stylesheet type="text/xsl" href="xsl/stock.xsl"?>
-
-<inventory>
-    <item>
+<items>
+    <item id="1">
         <name>Młotek</name>
-        <stock>10</stock>
-        <weight>2</weight>
-        <color color="green">Zielony</color>
+        <stock>10 sztuk</stock>
+        <weight>2kg</weight>
+        <color>Zielony</color>
+        <usage>Wbijanie gwoździ</usage>
     </item>
-
-</inventory>
+</items>
