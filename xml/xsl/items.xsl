@@ -15,7 +15,7 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
   <body style="background-color: {$backgroundColor}">
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="/xml/items.xml">Baza przedmiotów</a>
+      <a class="navbar-brand" href="/xml/index.html">Baza przedmiotów</a>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
