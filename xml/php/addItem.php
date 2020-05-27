@@ -13,25 +13,30 @@
             $xml = new DOMDocument("1.0", "UTF-8");
             $xml -> load('../items.xml');
 
-            $rootTag = $xml->getElementsByTagName("items")-> item(0);
+            $NAME = $_POST['NAME'];
+            $DESCRIPTION = $_POST['DESCRIPTION'];
+            $DOP = $_POST['DOP'];
+            $STATE = $_POST['STATE'];
+            $PRICE = $_POST['PRICE'];
 
-            $dataTag = $xml->createElement("item");
+            $itemsTag = $xml->getElementsByTagName("items")-> item(0);
 
-            $nameTag = $xml->createElement("name",$_REQUEST['NAME']);
-            $descTag = $xml->createElement("description",$_REQUEST['DESCRIPTION']);
-            $purchaseTag = $xml->createElement("dop",$_REQUEST['DOP']);
-            $stateTag = $xml->createElement("state",$_REQUEST['STATE']);
-            $priceTag = $xml->createElement("price",$_REQUEST['PRICE']);
+            $itemTag = $xml->createElement("item");
+                $nameTag = $xml->createElement("name", $NAME);
+                $descriptionTag = $xml->createElement("description", $DESCRIPTION);
+                $dopTag = $xml->createElement("dop", $DOP);
+                $stateTag = $xml->createElement("state", $STATE);
+                $priceTag = $xml->createElement("price", $PRICE);
 
-            $dataTag->appendChild($nameTag);
-            $dataTag->appendChild($descTag);
-            $dataTag->appendChild($purchaseTag);
-            $dataTag->appendChild($stateTag);
-            $dataTag->appendChild($priceTag);
+                $itemTag->appendChild($nameTag);
+                $itemTag->appendChild($descriptionTag);
+                $itemTag->appendChild($dopTag);
+                $itemTag->appendChild($stateTag);
+                $itemTag->appendChild($priceTag);
 
-            $rootTag -> appendChild($dataTag);
-
-            $xml -> save("../items.xml");
+            $itemsTag->appendChild($itemTag);
+            $xml->save('../items.xml');
+        }
     ?>
 
     <div id="nav">
