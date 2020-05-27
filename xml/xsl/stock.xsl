@@ -3,11 +3,15 @@
 <xsl:stylesheet version="1.0"
 xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
+ <xsl:strip-space elements="*"/>
+
 <xsl:template match="/">
   <xsl:param name="backgroundColor">#e8e4e1</xsl:param>
   <html>
   <head>
     <head>
+      <script type="text/javascript" src="script/jquery.js"></script> 
+      <script type="text/javascript" src="script/jquery.tablesorter.js"></script> 
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"/>
     </head>
   </head>
@@ -30,16 +34,18 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
     <div class="container">
       <div style="margin-top: 10px; margin-bottom: 10px; float: left;">
-        <a href="xsl/ascending/items.xml" class="btn btn-dark" >Nazwy A-Z</a>
-        <a href="xsl/descending/items.xml" class="btn btn-dark" style="margin-left: 10px;">Nazwy Z-A</a>
+        <p>Kliknięcie na nagłówek kolumny w tabeli zmieni typ sortowania.</p>
       </div>
-      <table class="table table table-hover" style="margin-top: 50px;" border="1">
+
+      <table id="myTable" class="table table table-hover" style="margin-top: 50px;" border="1">
+
         <thead align="center" class="thead-dark">
           <th>Nazwa</th>
-          <th>Opis</th>
-          <th>Data zakupu</th>
-          <th>Stan techniczny</th>
+          <th>Ilość</th>
+          <th>Waga</th>
+          <th>Kolor</th>
         </thead>
+
         <tbody>
           <xsl:for-each select="inventory/item">
             <tr>
@@ -50,8 +56,20 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
             </tr>
           </xsl:for-each>
         </tbody>
+
       </table>
     </div> 
+
+    <script> 
+    
+      $(document).ready(function() 
+          { 
+              $("#myTable").tablesorter( {sortList: [[0,0], [1,0]]} ); 
+          } 
+      );
+
+    </script>
+
   </body>
   </html>
 </xsl:template>
