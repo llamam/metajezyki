@@ -39,7 +39,6 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
           <th>Opis</th>
           <th>Data zakupu</th>
           <th>Stan techniczny</th>
-          <th>Cena</th>
         </thead>
         <tbody>
           <xsl:for-each select="inventory/item">
@@ -48,7 +47,6 @@ xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
               <td><xsl:value-of select="stock"/></td>
               <td><xsl:value-of select="weight"/></td>
               <td><xsl:value-of select="color"/></td>
-              <td><xsl:value-of select="document('/xml/items.xml')/item/name[@name=$name]/price"/></td>
             </tr>
           </xsl:for-each>
         </tbody>

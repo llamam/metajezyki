@@ -10,11 +10,11 @@
         <price>15</price>
     </item>
     <item>
-        <name>Apaszka</name>
-        <description>Młotek z długą rączką</description>
-        <dop>23.05.2020</dop>
+        <name>Poziomica</name>
+        <description>Służy do wyznaczania poziomu</description>
+        <dop>21.05.2020</dop>
         <state>Dobry</state>
-        <price>15</price>
+        <price>10</price>
     </item>
 
 </items>
