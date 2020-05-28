@@ -10,22 +10,23 @@
 <body>
 
     <?php
-        if (isset($_POST['ok'])) {
-            $xml13=simplexml_load_file("../items.xml");
+        if (isset($_REQUEST['ok'])) {
 
-            $NAME = $_REQUEST['NAME'];
+            $xml = simplexml_load_file("../items.xml");
 
-            function delete_item_id($id, $filename = '../items.xml') {
-                $data = simplexml_load_file($filename);
-                for($i = 0, $length = count($data->item); $i < $length; $i++) {
-                    if($data->item[$i]->$NAME == $id) {
-                        unset($data->item[$i]);
-                        break;
+            function delete_item($id, $filename = "../items.xml") {
+
+                $itemsTag = simplexml_load_file("../items.xml");
+
+                for($i = 0, $length = count($itemsTag -> item); $length; $i++) {
+                    if ($itemsTag-> item[$i]-> name == $id) {
+                        unset ($itemsTag -> item[$i]);
+                    break;
                     }
                 }
-                file_put_contents($filename, $data->saveXML());
+                file_put_contents($filename, $itemsTag->saveXML());
             }
-            delete_item_id("name", $NAME);
+            delete_item($_REQUEST['NAME']);
         }
     ?>
 
@@ -35,8 +36,8 @@
 
     <div class="container">
 
-        <div id="addItem">
-            <form action="addItem.php" method="post">
+        <div id="deleteItem">
+            <form action="deleteItem.php" method="post">
                 <input name="NAME" type="text" placeholder="Nazwa sprzętu" >
                 <input name="ok" type="submit" value="Usuń">
             </form>
