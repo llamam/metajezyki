@@ -11,21 +11,19 @@
 
     <?php
         if (isset($_POST['ok'])) {
-            $xml13=simplexml_load_file("../items.xml");
+            $xml = new DOMDocument("1.0", "UTF-8");
+            $xml -> load('../items.xml');
 
-            $NAME = $_REQUEST['NAME'];
+            $NAME = $_POST['NAME'];
 
-            function delete_item_id($id, $filename = '../items.xml') {
-                $data = simplexml_load_file($filename);
-                for($i = 0, $length = count($data->item); $i < $length; $i++) {
-                    if($data->item[$i]->$NAME == $id) {
-                        unset($data->item[$i]);
-                        break;
-                    }
-                }
-                file_put_contents($filename, $data->saveXML());
+            $xpath = new DOMXPATH($xml);
+
+            foreach($xpath->query(".../item[name = '$NAME']") as $node) {
+                $node ->parentNode->removeChild($node);
             }
-            delete_item_id("name", $NAME);
+
+            $xml->formatoutput = true;
+            $xml->save('../items.xml');
         }
     ?>
 

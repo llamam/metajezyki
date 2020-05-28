@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="xsl/items.xsl"?>
+
 <items>
     <item>
         <name>Młotek</name>
@@ -15,3 +16,5 @@
         <state>Dobry</state>
         <price>10</price>
     </item>
+
+</items>
