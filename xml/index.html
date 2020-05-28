@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <meta charset="UTF-8">
 </head>
 
 <body>
@@ -23,13 +24,19 @@
             </ul>
         </div>
     </nav>
-
+    
     <div id="container">
-        <!--    tutaj jakiś ekran powitalny, logowanie?     -->
 
-
-        <!--    nawigacja   -->
+        <h2>Strona główna</h2>
+        <div id="break"></div>
+        <h4>Przedmioty</h4>
+        <a href="php/addItem.php"><button type="button" class="btn btn-primary">Dodaj</button></a> 
+        <a href="php/editItem.php"><button type="button" class="btn btn-primary">Edytuj</button></a> 
+        <a href="php/deleteItem.php"><button type="button" class="btn btn-primary">Usuń</button></a> 
+        <div id="break"></div>
+        <h4>Stan magazynu</h4>
+        <button type="button" class="btn btn-primary">Dodaj</button> 
+        <button type="button" class="btn btn-primary">Edytuj</button> 
+        <button type="button" class="btn btn-primary">Usuń</button>
     </div>
 </body>
-
-</html>
