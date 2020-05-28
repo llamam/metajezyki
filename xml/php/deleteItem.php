@@ -5,6 +5,8 @@
     <title>Baza pytań</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
 </head>
 
 <body>
@@ -37,9 +39,11 @@
     <div class="container">
 
         <div id="deleteItem">
+            <h2> Formularz usuwania produktu</h2>
+            <div id="break"></div>
             <form action="deleteItem.php" method="post">
-                <input name="NAME" type="text" placeholder="Nazwa sprzętu" >
-                <input name="ok" type="submit" value="Usuń">
+                <input class="form-control" name="NAME" type="text" placeholder="Nazwa sprzętu" >
+                <input class="btn btn-primary" name="ok" type="submit" value="Usuń">
             </form>
         </div>
     </div>

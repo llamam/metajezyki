@@ -48,7 +48,7 @@
 
     <div class="container">
 
-        <div id="addItem">
+        <div id="container">
         <h2> Formularz dodania produktu</h2>
             <div id="break"></div>
             <form action="addItem.php" method="post">
@@ -57,7 +57,7 @@
                 <input class="form-control" name="DOP"  type="text" placeholder="Data zakupu" >
                 <input class="form-control" name="STATE" type="text" placeholder="Stan" >
                 <input class="form-control" name="PRICE" type="text" placeholder="Cena" >
-                <input class="form-control" name="ok" type="submit" value="Dodaj rekord">
+                <input class="btn btn-primary" name="ok" type="submit" value="Dodaj rekord">
             </form>
         </div>
     </div>
