@@ -54,7 +54,7 @@
             <form action="deleteItem.php" method="post">
                 <input class="form-control" name="NAME" type="text" placeholder="Nazwa sprzętu" >
                 <div id="break"></div>
-                <input class="btn btn-primary" name="ok" type="submit" value="Usuń">
+                <input class="btn btn-primary" name="ok" type="submit" value="Usuń rekord">
             </form>
         </div>
     </div>
