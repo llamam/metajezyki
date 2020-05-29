@@ -3,16 +3,15 @@
 <items>
     <item>
         <name>Młotek</name>
-        <description>Młotek z długą rączką</description>
-        <dop>23.05.2020</dop>
-        <state>Dobry</state>
-        <price>15</price>
+        <description>xd</description>
+        <dop>xd</dop>
+        <state>xd</state>
+        <price>xd</price>
     </item>
     <item>
-        <name>Poziomica</name>
-        <description>Służy do wyznaczania poziomu</description>
-        <dop>21.05.2020</dop>
-        <state>Dobry</state>
-        <price>10</price>
-    </item>
+        <name>Piła</name>
+        <description>srebrna piła</description>
+        <dop>03.01.2020</dop><state>dobry</state>
+        <price>20zł</price>
+    <description>xd</description><dop>xd</dop><state>xd</state><price>xd</price></item>
 </items>
