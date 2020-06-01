@@ -63,7 +63,7 @@ foreach($items->item as $item){
         <h2> Formularz edytowania produktu</h2>
             <div id="break"></div>
             <form action="editItem.php" method="post">
-                <input class="form-control" name="id" type="text" placeholder="ID" value="<?php echo $id; ?>" >
+                <input class="form-control" name="id" type="text" placeholder="ID" value="<?php echo $id; ?>" readonly >
                 <div id="break"></div>
                 <input class="form-control" name="NAME" type="text" placeholder="Nazwa sprzętu" value="<?php echo $name; ?>" >
                 <div id="break"></div>
