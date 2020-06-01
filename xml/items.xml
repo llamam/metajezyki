@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="xsl/items.xsl"?>
 <items>
-    <item>
-        <name>Młotek</name>
-        <description>xd</description>
-        <dop>xd</dop>
-        <state>xd</state>
-        <price>xd</price>
-    </item>
-</items>
+    
+<item id="1"><name>Młotek</name><description>Służy do wbijania gwoździ</description><dop>21.05.2020</dop><state>Poprawny</state><price>15</price></item><item id="2"><name>Poziomica</name><description>Służy do wyznaczenia poziomu</description><dop>25.05.2020</dop><state>Poprawny</state><price>15</price></item></items>
