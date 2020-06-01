@@ -12,34 +12,21 @@
 
 <body>
     <?php
+        $items = simplexml_load_file('../items.xml');
         if(isset($_POST['ok'])) {
-            $xml = new DOMDocument("1.0", "UTF-8");
-            $xml -> load('../items.xml');
-
-            $NAME = $_POST['NAME'];
-            $DESCRIPTION = $_POST['DESCRIPTION'];
-            $DOP = $_POST['DOP'];
-            $STATE = $_POST['STATE'];
-            $PRICE = $_POST['PRICE'];
-
-            $itemsTag = $xml->getElementsByTagName("items")-> item(0);
-
-            $itemTag = $xml->createElement("item");
-                $nameTag = $xml->createElement("name", $NAME);
-                $descriptionTag = $xml->createElement("description", $DESCRIPTION);
-                $dopTag = $xml->createElement("dop", $DOP);
-                $stateTag = $xml->createElement("state", $STATE);
-                $priceTag = $xml->createElement("price", $PRICE);
-
-                $itemTag->appendChild($nameTag);
-                $itemTag->appendChild($descriptionTag);
-                $itemTag->appendChild($dopTag);
-                $itemTag->appendChild($stateTag);
-                $itemTag->appendChild($priceTag);
-
-            $itemsTag->appendChild($itemTag);
-            $xml->save('../items.xml');
+            require '../simplexml.class.php';
+            $items = simplexml_load_file('../items.xml');
+            $item = $items->addChild('item');
+            $item -> addAttribute('id', $_POST['id']);
+            $item ->addChild('name', $_POST['NAME']);
+            $item->addChild('description', $_POST['DESCRIPTION']);
+            $item ->addChild('dop', $_POST['DOP']);
+            $item ->addChild('state', $_POST['STATE']);
+            $item ->addChild('price', $_POST['PRICE']);
+            file_put_contents('../items.xml', $items->asXML());
+            header('location: items.php');
         }
+        $x = ''.count($items)  + 1;
     ?>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -62,6 +49,9 @@
             <h2> Formularz dodania produktu</h2>
             <div id="break"></div>
             <form action="addItem.php" method="post">
+
+                <input type="number"class="form-control" name="id" value="<?php echo $x ?>" readonly>
+                <div id="break"></div>
                 <input class="form-control" name="NAME" type="text" placeholder="Nazwa sprzętu" >
                 <div id="break"></div>
                 <input class="form-control" name="DESCRIPTION" type="text" placeholder="Opis">

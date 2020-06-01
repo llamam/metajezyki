@@ -11,47 +11,37 @@
 
 <body>
 
-    <?php
-    if(isset($_POST['ok'])) {
-        $xml=simplexml_load_file('../items.xml');
+<?php
+$items = simplexml_load_file('../items.xml');
 
-        $NAME = $_POST['NAME'];
-        $DESCRIPTION = $_POST['DESCRIPTION'];
-        $DOP = $_POST['DOP'];
-        $STATE = $_POST['STATE'];
-        $PRICE = $_POST['PRICE'];
+if(isset($_POST['ok'])) {
 
-        $i=-1;
-        foreach($xml->children() as $item) {
-            $i=$i+1;
-                $name=$item->name;
-                $description=$item->description;
-                $dop=$item->dop;
-                $state=$item->state;
-                $price=$item->price;
-
-                if($_REQUEST['NAME']==$name) {
-
-                    if($_REQUEST['DESCRIPTION']!=null) {
-                        $item->description=$_REQUEST['DESCRIPTION'];
-                    }
-
-                    if($_REQUEST['DOP']!=null) {
-                        $item->dop[2]=$_REQUEST['DOP'];
-                    }
-
-                    if($_REQUEST['STATE']!=null) {
-                        $item->state[$i]=$_REQUEST['STATE'];
-                    }
-
-                    if($_REQUEST['PRICE']!=null) {
-                        $item->price[$i]=$_REQUEST['PRICE'];
-                    }
-                }
+    foreach($items->item as $item){
+        if($item['id']==$_POST['id']){
+            $item->name = $_POST['NAME'];
+            $item->description = $_POST['DESCRIPTION'];
+            $item->dop = $_POST['DOP'];
+            $item->state = $_POST['STATE'];
+            $item->price = $_POST['PRICE'];
+            break;
         }
-        file_put_contents("../items.xml", $xml->saveXML());
     }
-    ?>
+    file_put_contents('../items.xml', $items->asXML());
+    header('location: items.php');
+}
+
+foreach($items->item as $item){
+    if($item['id']==$_GET['id']){
+        $id = $item['id'];
+        $name = $item->name;
+        $description = $item->description;
+        $dop = $item->dop;
+        $state = $item->state;
+        $price = $item->price;
+        break;
+    }
+}
+?>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="../index.html">Baza przedmiotów</a>
@@ -73,15 +63,17 @@
         <h2> Formularz edytowania produktu</h2>
             <div id="break"></div>
             <form action="editItem.php" method="post">
-                <input class="form-control" name="NAME" type="text" placeholder="Nazwa sprzętu" >
+                <input class="form-control" name="id" type="text" placeholder="ID" value="<?php echo $id; ?>" >
                 <div id="break"></div>
-                <input class="form-control" name="DESCRIPTION" type="text" placeholder="Opis">
+                <input class="form-control" name="NAME" type="text" placeholder="Nazwa sprzętu" value="<?php echo $name; ?>" >
                 <div id="break"></div>
-                <input class="form-control" name="DOP" class="inputShort" type="text" placeholder="Data zakupu" >
+                <input class="form-control" name="DESCRIPTION" type="text"  placeholder="Opis" value="<?php echo $description; ?>">
                 <div id="break"></div>
-                <input class="form-control" name="STATE" class="inputShort" type="text" placeholder="Stan" >
+                <input class="form-control" name="DOP" class="inputShort" type="text"  placeholder="Data zakupu" value="<?php echo $dop; ?>" >
                 <div id="break"></div>
-                <input class="form-control" name="PRICE" class="inputShort" type="text" placeholder="Cena" >
+                <input class="form-control" name="STATE" class="inputShort" type="text"  placeholder="Stan" value="<?php echo $state; ?>">
+                <div id="break"></div>
+                <input class="form-control" name="PRICE" class="inputShort" type="text"  placeholder="Cena" value="<?php echo $price; ?>">
                 <div id="break"></div>
                 <input class="btn btn-primary" name="ok" type="submit" value="Edytuj rekord">
             </form>
