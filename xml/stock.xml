@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="xsl/stock.xsl"?>
-<items>
+<inventory>
     <item id="1">
         <name>Młotek</name>
         <stock>10 sztuk</stock>
-        <weight>2kg</weight>
+        <weight>2</weight>
         <color>Zielony</color>
         <usage>Wbijanie gwoździ</usage>
     </item>
-</items>
+</inventory>
