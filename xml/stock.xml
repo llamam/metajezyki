@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/xsl" href="xsl/stock.xsl"?>
-<items>
+<inventory>
     <item id="1">
         <name>Młotek</name>
         <stock>10 sztuk</stock>
-        <weight>2kg</weight>
+        <weight>2</weight>
         <color>Zielony</color>
         <usage>Wbijanie gwoździ</usage>
     </item>
-</items>
+<item id="2"><name>Poziomica</name><stock>100</stock><weight>1</weight><color>czerwony</color><usage>sprawdzanie poziomu</usage></item><item id="3"><name>piła</name><stock>200</stock><weight>2</weight><color>czarny</color><usage>do piłowania</usage></item><item id="4"><name>siekiera</name><stock>100</stock><weight>10</weight><color>czerwony</color><usage>do rąbania drewna</usage></item><item id="5"><name>łopata</name><stock>300</stock><weight>7</weight><color>czarny</color><usage>do kopania </usage></item><item id="6"><name>miarka</name><stock>500</stock><weight>0.1</weight><color>żółty</color><usage>do mierzenia</usage></item><item id="7"><name>piła</name><stock>500</stock><weight>1</weight><color>żółty</color><usage>do piłowania</usage></item><item id="8"><name>kilof</name><stock>100</stock><weight>20</weight><color>czarny</color><usage>do kopania</usage></item><item id="9"><name>kamizelka</name><stock>1000</stock><weight>0.1</weight><color>żółty</color><usage>pozwala byc bardziej widocznym</usage></item><item id="10"><name>łopata</name><stock>400</stock><weight>10</weight><color>czerwony</color><usage>do kopania</usage></item><item id="11"><name>poziomica</name><stock>100</stock><weight>2</weight><color>zielony</color><usage>do mierzenia poziomu</usage></item><item id="12"><name>wiertarka</name><stock>100</stock><weight>10</weight><color>czarny</color><usage>do wiercenia</usage></item><item id="13"><name>kamizelka</name><stock>1000</stock><weight>0.1</weight><color>czerwony</color><usage>pozwala byc bardziej widocznym</usage></item><item id="14"><name>młotek</name><stock>100</stock><weight>5</weight><color>pomaranczowy</color><usage>służy do wbijania gwoździ</usage></item><item id="15"><name>młotek</name><stock>100</stock><weight>5</weight><color>czarny</color><usage>służy do wbijania gwoździ</usage></item></inventory>

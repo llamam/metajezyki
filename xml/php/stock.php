@@ -1,7 +1,7 @@
 <?php
 require '../simplexml.class.php';
 if(isset($_GET['action'])) {
-    $items = simplexml_load_file('../items.xml');
+    $items = simplexml_load_file('../stock.xml');
     $id = $_GET['id'];
     $index = 0;
     $i = 0;
@@ -14,9 +14,9 @@ if(isset($_GET['action'])) {
         $i++;
     }
     unset($items->item[$index]);
-    file_put_contents('../items.xml', $items->asXML());
+    file_put_contents('../stock.xml', $items->asXML());
 }
-$items = simplexml_load_file('../items.xml');
+$items = simplexml_load_file('../stock.xml');
 ?>
 
 <html>
@@ -49,17 +49,17 @@ $items = simplexml_load_file('../items.xml');
       <div style="margin-top: 10px; margin-bottom: 10px; float: left;">
         <p>Kliknięcie na nagłówek kolumny w tabeli zmieni typ sortowania.</p>
 
-        <a href="../php/addItem.php"><button type="button" class="btn btn-primary">Dodaj nowy przedmiot</button></a> 
+        <a href="../php/addStock.php"><button type="button" class="btn btn-primary">Dodaj nowy przedmiot</button></a> 
       </div>
 
       <table id="myTable" class="table table table-hover" style="margin-top: 50px;" border="1">
         <thead style="text-align:center;" class="thead-dark">
           <th>ID</th>
           <th>Nazwa</th>
-          <th>Opis</th>
-          <th>Data zakupu</th>
-          <th>Stan techniczny</th>
-          <th>Cena</th>
+          <th>Stan</th>
+          <th>Waga [kg]</th>
+          <th>Kolor</th>
+          <th>Użyteczność</th>
           <th style="width: 200px;">Opcje</th>
         </thead>
 
@@ -68,13 +68,13 @@ $items = simplexml_load_file('../items.xml');
             <tr>
                 <td><?php echo $item['id']; ?></td>
                 <td><?php echo $item->name; ?></td>
-                <td><?php echo $item->description; ?></td>
-                <td><?php echo $item->dop; ?></td>
-                <td><?php echo $item->state; ?></td>
-                <td><?php echo $item->price; ?> zł</td>
+                <td><?php echo $item->stock; ?></td>
+                <td><?php echo $item->weight; ?> kg</td>
+                <td><?php echo $item->color; ?></td>
+                <td><?php echo $item->usage; ?></td>
                 <td style="text-align: center;">
-                    <a style="width: 45%" class="btn btn-primary" href="editItem.php?id=<?php echo $item['id']; ?>">Edytuj</a>
-                    <a style="width: 45%" class="btn btn-danger" href="items.php?action=delete&id=<?php echo $item['id']; ?>" onclick="return confirm('Czy na pewno chcesz usunąć?')">Usuń</a>
+                    <a style="width: 45%" class="btn btn-primary" href="editStock.php?id=<?php echo $item['id']; ?>">Edytuj</a>
+                    <a style="width: 45%" class="btn btn-danger" href="stock.php?action=delete&id=<?php echo $item['id']; ?>" onclick="return confirm('Czy na pewno chcesz usunąć?')">Usuń</a>
                 </td>
             </tr>
             <?php } ?>
