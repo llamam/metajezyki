@@ -73,7 +73,7 @@ $items = simplexml_load_file('../items.xml');
                 <td><?php echo $item->state; ?></td>
                 <td><?php echo $item->price; ?> zł</td>
                 <td style="text-align: center;">
-                    <a style="width: 45%" class="btn btn-primary" href="editItem.php?id=<?php echo $item['id']; ?>">Edytuj</a>
+                    <a style="width: 45%" class="btn btn-primary" href="editItem.php?id=<?php echo $item['id']; ?>">Edycja i usuwanie</a>
                     <a style="width: 45%" class="btn btn-danger" href="items.php?action=delete&id=<?php echo $item['id']; ?>" onclick="return confirm('Czy na pewno chcesz usunąć?')">Usuń</a>
                 </td>
             </tr>
